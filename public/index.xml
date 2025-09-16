@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posei Site</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Posei Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2025 Posei</copyright>
+    <lastBuildDate>Thu, 07 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>To the Ghost in the Starting Gate</title>
+      <link>http://localhost:1313/poems/ghost-in-the-starting-gate/</link>
+      <pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/poems/ghost-in-the-starting-gate/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>to watch the arima kinen</title>
+      <link>http://localhost:1313/posts/to-watch-the-arima-kinen/</link>
+      <pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/to-watch-the-arima-kinen/</guid>
+      <description>The race that might stirs something indescribable, emotional, heart-pounding, undeniable</description>
+      
+    </item>
+    
+    <item>
+      <title>Climbing</title>
+      <link>http://localhost:1313/poems/climbing/</link>
+      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/poems/climbing/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>The quest to export report detail with range</title>
+      <link>http://localhost:1313/posts/the-quest-to-export-report-detail-with-range/</link>
+      <pubDate>Mon, 10 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/the-quest-to-export-report-detail-with-range/</guid>
+      <description>The dramatic story (not really) of coping with postgre performance</description>
+      
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;p&gt;SWE, heavy on mobile dev, so-so in the other &amp;lsquo;regular&amp;rsquo; dev.&lt;br&gt;
+Most of my work still leans toward mobile, but these days I wear more hats.&lt;/p&gt;
+&lt;p&gt;I pursue graphics programming in my own time, not just a passing interest, but a path I actively invest in.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

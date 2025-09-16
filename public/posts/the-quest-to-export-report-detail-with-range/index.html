@@ -1,0 +1,1533 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="dark"
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="en">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
+  
+  <title>The quest to export report detail with range &middot; Posei Site</title>
+    <meta name="title" content="The quest to export report detail with range &middot; Posei Site">
+
+  
+  <meta name="description" content="The dramatic story (not really) of coping with postgre performance">
+  <meta name="keywords" content="Database,Performance,">
+  
+  
+  <link rel="canonical" href="http://localhost:1313/posts/the-quest-to-export-report-detail-with-range/">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.d7672814413dccdcf76c504d9b0ebb8d0f964dbe6b30a3d4b25b15809a94c2eb732d99898aded2009aacdd1fa8b17cea1369fd81560790cd355aee00bbd142fd.css"
+    integrity="sha512-12coFEE9zNz3bFBNmw67jQ&#43;WTb5rMKPUslsVgJqUwutzLZmJit7SAJqs3R&#43;osXzqE2n9gVYHkM01Wu4Au9FC/Q==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
+    integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
+  
+  
+    
+    
+    
+  
+  
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.98bb8ce8f123e03c4d2171eeec151dd404b5c476beb5ef1068d0e8b1a2afb923065e6552fc14b2d867c85ee4bd8529a43193f729f874d3908517ba03b5d1cc57.js"
+      integrity="sha512-mLuM6PEj4DxNIXHu7BUd1AS1xHa&#43;te8QaNDosaKvuSMGXmVS/BSy2GfIXuS9hSmkMZP3Kfh005CFF7oDtdHMVw=="
+      data-copy="Copy"
+      data-copied="Copied"></script>
+  
+  
+    
+    <script src="/lib/zoom/zoom.min.umd.a527109b68c082a70f3697716dd72a9d5aa8b545cf800cecbbc7399f2ca6f6e0ce3e431f2062b48bbfa47c9ea42822714060bef309be073f49b9c0e30d318d7b.js" integrity="sha512-pScQm2jAgqcPNpdxbdcqnVqotUXPgAzsu8c5nyym9uDOPkMfIGK0i7&#43;kfJ6kKCJxQGC&#43;8wm&#43;Bz9JucDjDTGNew=="></script>
+  
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  <meta property="og:url" content="http://localhost:1313/posts/the-quest-to-export-report-detail-with-range/">
+  <meta property="og:site_name" content="Posei Site">
+  <meta property="og:title" content="The quest to export report detail with range">
+  <meta property="og:description" content="The dramatic story (not really) of coping with postgre performance">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-07-10T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-07-10T00:00:00+00:00">
+    <meta property="article:tag" content="Database">
+    <meta property="article:tag" content="Performance">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="The quest to export report detail with range">
+  <meta name="twitter:description" content="The dramatic story (not really) of coping with postgre performance">
+
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Posts",
+    "name": "The quest to export report detail with range",
+    "headline": "The quest to export report detail with range",
+    
+    "abstract": "The dramatic story (not really) of coping with postgre performance",
+    "inLanguage": "en",
+    "url" : "http:\/\/localhost:1313\/posts\/the-quest-to-export-report-detail-with-range\/",
+    "author" : {
+      "@type": "Person",
+      "name": "Posei"
+    },
+    "copyrightYear": "2023",
+    "dateCreated": "2023-07-10T00:00:00\u002b00:00",
+    "datePublished": "2023-07-10T00:00:00\u002b00:00",
+    
+    "dateModified": "2023-07-10T00:00:00\u002b00:00",
+    
+    "keywords": ["Database","Performance"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "2895"
+  }]
+  </script>
+
+
+
+  
+  
+    <meta name="author" content="Posei">
+  
+  
+    
+      
+        
+          <link href="https://github.com/poseiso" rel="me">
+        
+      
+    
+      
+        
+      
+    
+  
+
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+</head>
+<body
+    class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content">
+        <span class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>
+        Skip to main content
+      </a>
+    </div>
+    
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3 pt-[2px] pr-0 pb-[3px] pl-0">
+  
+  
+
+  <div class="flex flex-1 items-center justify-between">
+    <nav class="flex space-x-3">
+      
+        <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">
+          Posei Site
+        </a>
+      
+    </nav>
+    
+  <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+    
+      
+        
+  <a
+  href="/posts/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="Posts">
+    Blog
+  </p>
+</a>
+
+
+
+      
+        
+  <a
+  href="/poems/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="Poems">
+    Poems
+  </p>
+</a>
+
+
+
+      
+        
+  <a
+  href="/about/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="About">
+    About
+  </p>
+</a>
+
+
+
+      
+    
+
+    
+
+    
+
+    
+      <button
+        id="search-button"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+      <div class=" flex items-center">
+        <button
+          id="appearance-switcher"
+          aria-label="Dark mode switcher"
+          type="button"
+          class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+          <div class="flex items-center justify-center dark:hidden">
+            <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+          </div>
+          <div class="items-center justify-center hidden dark:flex">
+            <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+          </div>
+        </button>
+      </div>
+    
+  </nav>
+
+    
+  <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+    <span></span>
+
+    
+
+    
+
+    
+      <button
+        id="search-button-mobile"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+      <button
+        id="appearance-switcher-mobile"
+        aria-label="Dark mode switcher"
+        type="button"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400 ltr:mr-1 rtl:ml-1">
+        <div class="flex items-center justify-center dark:hidden">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+        </div>
+        <div class="items-center justify-center hidden dark:flex">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+        </div>
+      </button>
+    
+  </div>
+
+  </div>
+  
+  <div class="-my-2 md:hidden">
+    <div id="menu-button" class="block">
+      
+        <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+</span>
+        </div>
+        <div
+          id="menu-wrapper"
+          class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 pt-[5px]">
+          <ul
+            class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
+            <li id="menu-close-button">
+              <span
+                class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+                <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+              </span>
+            </li>
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/posts/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="Posts">
+      Blog
+    </p>
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/poems/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="Poems">
+      Poems
+    </p>
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/about/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="About">
+      About
+    </p>
+  </a>
+</li>
+
+
+
+            
+
+          </ul>
+          
+        </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+  <article>
+    
+    
+      
+      
+      
+      
+        
+  
+
+      
+    
+
+    
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        The quest to export report detail with range
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2023-07-10T00:00:00&#43;00:00">10 July 2023</time><span class="px-2 text-primary-500">&middot;</span><span>2895 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">14 mins</span><span class="px-2 text-primary-500">&middot;</span>
+
+
+
+<script
+  type="text/javascript"
+  src="/js/zen-mode.min.9814dee9614d32aeb56239d118edfe20acd6231424f9b19c2dd48835038414130a5e946c0d1c9087d60e60e31840c9babfd217e3d4b95643dc8d651a71ccdf4a.js"
+  integrity="sha512-mBTe6WFNMq61YjnRGO3&#43;IKzWIxQk&#43;bGcLdSINQOEFBMKXpRsDRyQh9YOYOMYQMm6v9IX49S5VkPcjWUacczfSg=="></script>
+
+<span class="mb-[2px]">
+  <span
+    id="zen-mode-button"
+    class="text-lg hover:text-primary-500"
+    title="Enable zen mode"
+    data-title-i18n-disable="Enable zen mode"
+    data-title-i18n-enable="Disable zen mode">
+    <span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px" height="50px">
+    <path fill="currentColor" d="M 12.980469 4 C 9.1204688 4 5.9804688 7.14 5.9804688 11 L 6 26 L 9.9804688 26 L 9.9804688 11 C 9.9804688 9.35 11.320469 8 12.980469 8 L 40.019531 8 C 41.679531 8 43.019531 9.35 43.019531 11 L 43.019531 39 C 43.019531 40.65 41.679531 42 40.019531 42 L 29 42 C 29 43.54 28.420938 44.94 27.460938 46 L 40.019531 46 C 43.879531 46 47.019531 42.86 47.019531 39 L 47.019531 11 C 47.019531 7.14 43.879531 4 40.019531 4 L 12.980469 4 z M 7 28 C 4.794 28 3 29.794 3 32 L 3 42 C 3 44.206 4.794 46 7 46 L 23 46 C 25.206 46 27 44.206 27 42 L 27 32 C 27 29.794 25.206 28 23 28 L 7 28 z M 7 32 L 23 32 L 23.001953 42 L 7 42 L 7 32 z"/>
+</svg></span></span>
+  </span>
+</span>
+
+    
+
+    
+    
+  </div>
+
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+            
+              <a class="relative mt-[0.5rem] mr-2" href="/categories/tech-blog/"
+                ><span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Tech Blog
+  </span>
+</span>
+</a
+              >
+            
+          
+        
+      
+        
+      
+        
+          
+            
+              <a class="relative mt-[0.5rem] mr-2" href="/tags/database/"
+                ><span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Database
+  </span>
+</span>
+</a
+              >
+            
+              <a class="relative mt-[0.5rem] mr-2" href="/tags/performance/"
+                ><span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Performance
+  </span>
+</span>
+</a
+              >
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+      </div>
+      
+        
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+      
+    </header>
+
+    
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+      
+      
+      
+      
+        <div class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
+          <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-10">
+            
+              <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-simplicity-mirage">The simplicity mirage</a></li>
+    <li><a href="#taming-the-elephant">Taming the elephant</a></li>
+    <li><a href="#finding-half-of-the-solution-index">Finding half of the solution: Index</a></li>
+    <li><a href="#finding-impostor-among-us">Finding impostor among us</a></li>
+    <li><a href="#a-glimmer-of-hope">A glimmer of hope</a></li>
+    <li><a href="#work-around-that-took-out-production">Work around that took out production</a></li>
+    <li><a href="#discovering-success-the-silver-lining">Discovering Success: The Silver Lining</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-simplicity-mirage">The simplicity mirage</a></li>
+    <li><a href="#taming-the-elephant">Taming the elephant</a></li>
+    <li><a href="#finding-half-of-the-solution-index">Finding half of the solution: Index</a></li>
+    <li><a href="#finding-impostor-among-us">Finding impostor among us</a></li>
+    <li><a href="#a-glimmer-of-hope">A glimmer of hope</a></li>
+    <li><a href="#work-around-that-took-out-production">Work around that took out production</a></li>
+    <li><a href="#discovering-success-the-silver-lining">Discovering Success: The Silver Lining</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+
+            
+            
+          </div>
+        </div>
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+        <div class="article-content max-w-prose mb-20">
+          <p>The dramatic story (not really) of coping with postgre performance</p>
+
+<h2 class="relative group">The simplicity mirage 
+    <div id="the-simplicity-mirage" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#the-simplicity-mirage" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>On the 11th of April 2023, a seemingly harmless feature request was thrown into the mix. The team wanted the ability to export sales reports within a specific date range. &ldquo;Piece of cake,&rdquo; I thought confidently. After all, we already had the daily export feature in place. How hard could it be to add a date filter and call it a day?</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img class="my-0 rounded-md" loading="lazy" alt="gampang" src="/posts/the-quest-to-export-report-detail-with-range/gampank.png">
+
+  
+</figure>
+</p>
+<p>Our first attempt at tackling this feature seemed promising. Just add a second date filter and voila! But oh boy, did we get a rude awakening. As soon as we dared to request a month-long sales report, the query simply timed out&hellip;</p>
+<p>There must be a mistake let&rsquo;s try it again!</p>
+<p><code>Cancelling statement due to statement timeout</code></p>
+<p>Uhh&hellip; Let&rsquo;s try the Supabase sql editor and run the query there</p>
+<p><code>upstream request timeout</code></p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img class="my-0 rounded-md" loading="lazy" alt="sweat" src="/posts/the-quest-to-export-report-detail-with-range/korone_sweat.png">
+
+  
+</figure>
+</p>
+<p>The Math isn&rsquo;t Mathing! I mean, come on, if it takes less than a second to fetch the sales for a single day, logic dictates that a month&rsquo;s worth of data would take, what, 30 seconds max?</p>
+<p>Instead of unraveling the enigma at that moment, we collectively decided to take the easy way out and increase the timeout limit. And like magic, we could finally export a month&rsquo;s worth of reports. Victory! Or so we thought&hellip; The feature can only handle 1 month worth of report max</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img class="my-0 rounded-md" loading="lazy" alt="cat scream" src="/posts/the-quest-to-export-report-detail-with-range/cat_scream.gif">
+
+  
+</figure>
+</p>
+
+<h2 class="relative group">Taming the elephant 
+    <div id="taming-the-elephant" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#taming-the-elephant" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>After putting the feature on the back burner and juggling other priorities and projects, I finally mustered the courage to confront the infamous sales report conundrum once again. Determined to find a permanent solution, I dove headfirst into data query.</p>
+<p>Upon examining the current implementation, it became painfully clear that it was ill-equipped to handle anything beyond a measly month of data. As I peered into the depths of the report data view, a sinking feeling washed over me.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="k">REPLACE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="k">public</span><span class="p">.</span><span class="s2">&#34;laporanPenjualanDetailNew&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">AS</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">r</span><span class="p">.</span><span class="s2">&#34;isDeleted&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;salesId&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;salesName&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">division</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;salesDivision&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="s2">&#34;clusterId&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">c</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;clusterName&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">o</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;outletId&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">o</span><span class="p">.</span><span class="s2">&#34;digiposId&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">o</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;outletName&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">o</span><span class="p">.</span><span class="s2">&#34;noChip&#34;</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;outletNoChip&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">w</span><span class="p">.</span><span class="s2">&#34;uniqueId&#34;</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;itemOrProgramId&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">CASE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">WHEN</span><span class="w"> </span><span class="n">rd</span><span class="p">.</span><span class="s2">&#34;programId&#34;</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;Program&#39;</span><span class="p">::</span><span class="nb">text</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">ELSE</span><span class="w"> </span><span class="s1">&#39;Fisik&#39;</span><span class="p">::</span><span class="nb">text</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;typeItem&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">replace</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">CASE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">WHEN</span><span class="w"> </span><span class="n">rd</span><span class="p">.</span><span class="s2">&#34;programId&#34;</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="p">(</span><span class="n">rd</span><span class="p">.</span><span class="n">program</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s1">&#39;name&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)::</span><span class="nb">text</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">ELSE</span><span class="w"> </span><span class="p">(</span><span class="n">rd</span><span class="p">.</span><span class="n">item</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s1">&#39;name&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)::</span><span class="nb">text</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">END</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#34;&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;itemName&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">count</span><span class="p">(</span><span class="n">rd</span><span class="p">.</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;countItem&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">CASE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">WHEN</span><span class="w"> </span><span class="n">rd</span><span class="p">.</span><span class="s2">&#34;programId&#34;</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="p">(</span><span class="n">rd</span><span class="p">.</span><span class="n">program</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s1">&#39;priceProgram&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)::</span><span class="n">double</span><span class="w"> </span><span class="k">precision</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">ELSE</span><span class="w"> </span><span class="p">(</span><span class="n">rd</span><span class="p">.</span><span class="n">item</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s1">&#39;basePrice&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)::</span><span class="n">double</span><span class="w"> </span><span class="k">precision</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;priceBase&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">CASE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">WHEN</span><span class="w"> </span><span class="n">rd</span><span class="p">.</span><span class="s2">&#34;programId&#34;</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="p">(</span><span class="n">rd</span><span class="p">.</span><span class="n">program</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s1">&#39;price&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)::</span><span class="n">double</span><span class="w"> </span><span class="k">precision</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">ELSE</span><span class="w"> </span><span class="p">(</span><span class="n">rd</span><span class="p">.</span><span class="n">item</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s1">&#39;price&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)::</span><span class="n">double</span><span class="w"> </span><span class="k">precision</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;priceSell&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">sum</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">CASE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">WHEN</span><span class="w"> </span><span class="n">rd</span><span class="p">.</span><span class="s2">&#34;programId&#34;</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="p">(</span><span class="n">rd</span><span class="p">.</span><span class="n">program</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s1">&#39;priceProgram&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)::</span><span class="n">double</span><span class="w"> </span><span class="k">precision</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">ELSE</span><span class="w"> </span><span class="p">(</span><span class="n">rd</span><span class="p">.</span><span class="n">item</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s1">&#39;basePrice&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)::</span><span class="n">double</span><span class="w"> </span><span class="k">precision</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;priceBaseTotal&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">sum</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">CASE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">WHEN</span><span class="w"> </span><span class="n">rd</span><span class="p">.</span><span class="s2">&#34;programId&#34;</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="p">(</span><span class="n">rd</span><span class="p">.</span><span class="n">program</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s1">&#39;price&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)::</span><span class="nb">integer</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">ELSE</span><span class="w"> </span><span class="p">(</span><span class="n">rd</span><span class="p">.</span><span class="n">item</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s1">&#39;price&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)::</span><span class="nb">integer</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;priceSellTotal&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">sum</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">CASE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">WHEN</span><span class="w"> </span><span class="n">rd</span><span class="p">.</span><span class="s2">&#34;programId&#34;</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="p">(</span><span class="n">rd</span><span class="p">.</span><span class="n">program</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s1">&#39;price&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)::</span><span class="nb">integer</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">ELSE</span><span class="w"> </span><span class="p">(</span><span class="n">rd</span><span class="p">.</span><span class="n">item</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s1">&#39;price&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)::</span><span class="nb">integer</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">END</span><span class="p">)::</span><span class="n">double</span><span class="w"> </span><span class="k">precision</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="k">sum</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">CASE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">WHEN</span><span class="w"> </span><span class="n">rd</span><span class="p">.</span><span class="s2">&#34;programId&#34;</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="p">(</span><span class="n">rd</span><span class="p">.</span><span class="n">program</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s1">&#39;price&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)::</span><span class="nb">integer</span><span class="p">::</span><span class="n">double</span><span class="w"> </span><span class="k">precision</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">rd</span><span class="p">.</span><span class="n">program</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s1">&#39;margin&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)::</span><span class="n">double</span><span class="w"> </span><span class="k">precision</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">ELSE</span><span class="w"> </span><span class="p">(</span><span class="n">rd</span><span class="p">.</span><span class="n">item</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s1">&#39;basePrice&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)::</span><span class="nb">integer</span><span class="p">::</span><span class="n">double</span><span class="w"> </span><span class="k">precision</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">laba</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">to_char</span><span class="p">((</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">CASE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">WHEN</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="s2">&#34;updatedAt&#34;</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="s2">&#34;createdAt&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">ELSE</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="s2">&#34;updatedAt&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">END</span><span class="w"> </span><span class="k">AT</span><span class="w"> </span><span class="n">TIME</span><span class="w"> </span><span class="k">ZONE</span><span class="w"> </span><span class="s1">&#39;ASIA/JAKARTA&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)::</span><span class="nb">date</span><span class="p">::</span><span class="k">timestamp</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="k">zone</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;yyyyMMdd&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)::</span><span class="nb">integer</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;dateInt&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">to_char</span><span class="p">((</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">CASE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">WHEN</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="s2">&#34;updatedAt&#34;</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="s2">&#34;createdAt&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">ELSE</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="s2">&#34;updatedAt&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">END</span><span class="w"> </span><span class="k">AT</span><span class="w"> </span><span class="n">TIME</span><span class="w"> </span><span class="k">ZONE</span><span class="w"> </span><span class="s1">&#39;ASIA/JAKARTA&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)::</span><span class="nb">date</span><span class="p">::</span><span class="k">timestamp</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="k">zone</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;yyyy-MM-dd&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">date</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="s2">&#34;createdAt&#34;</span><span class="w"> </span><span class="k">AT</span><span class="w"> </span><span class="n">TIME</span><span class="w"> </span><span class="k">ZONE</span><span class="w"> </span><span class="s1">&#39;ASIA/JAKARTA&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;createdAt&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">w</span><span class="p">.</span><span class="s2">&#34;uniqueId&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="k">FROM</span><span class="w"> </span><span class="s2">&#34;receiptDetails&#34;</span><span class="w"> </span><span class="n">rd</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">receipts</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="s2">&#34;masterSales&#34;</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="s2">&#34;masterClusters&#34;</span><span class="w"> </span><span class="k">c</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="s2">&#34;masterOutlets&#34;</span><span class="w"> </span><span class="n">o</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="s2">&#34;warehouseStocks&#34;</span><span class="w"> </span><span class="n">w</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">WHERE</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rd</span><span class="p">.</span><span class="s2">&#34;receiptId&#34;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="s2">&#34;isDeleted&#34;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">rd</span><span class="p">.</span><span class="s2">&#34;isDeleted&#34;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">w</span><span class="p">.</span><span class="s2">&#34;serialNumber&#34;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rd</span><span class="p">.</span><span class="s2">&#34;serialNumber&#34;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="s2">&#34;salesId&#34;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="s2">&#34;outletId&#34;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="s2">&#34;clusterId&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">w</span><span class="p">.</span><span class="s2">&#34;uniqueId&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">CASE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">WHEN</span><span class="w"> </span><span class="n">rd</span><span class="p">.</span><span class="s2">&#34;programId&#34;</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;Program&#39;</span><span class="p">::</span><span class="nb">text</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">ELSE</span><span class="w"> </span><span class="s1">&#39;Fisik&#39;</span><span class="p">::</span><span class="nb">text</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">END</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="k">replace</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">CASE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">WHEN</span><span class="w"> </span><span class="n">rd</span><span class="p">.</span><span class="s2">&#34;programId&#34;</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="p">(</span><span class="n">rd</span><span class="p">.</span><span class="n">program</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s1">&#39;name&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)::</span><span class="nb">text</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">ELSE</span><span class="w"> </span><span class="p">(</span><span class="n">rd</span><span class="p">.</span><span class="n">item</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s1">&#39;name&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)::</span><span class="nb">text</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">END</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#34;&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)),</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">CASE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">WHEN</span><span class="w"> </span><span class="n">rd</span><span class="p">.</span><span class="s2">&#34;programId&#34;</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="p">(</span><span class="n">rd</span><span class="p">.</span><span class="n">program</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s1">&#39;priceProgram&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)::</span><span class="n">double</span><span class="w"> </span><span class="k">precision</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">ELSE</span><span class="w"> </span><span class="p">(</span><span class="n">rd</span><span class="p">.</span><span class="n">item</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s1">&#39;basePrice&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)::</span><span class="n">double</span><span class="w"> </span><span class="k">precision</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">END</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">CASE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">WHEN</span><span class="w"> </span><span class="n">rd</span><span class="p">.</span><span class="s2">&#34;programId&#34;</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="p">(</span><span class="n">rd</span><span class="p">.</span><span class="n">program</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s1">&#39;price&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)::</span><span class="n">double</span><span class="w"> </span><span class="k">precision</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">ELSE</span><span class="w"> </span><span class="p">(</span><span class="n">rd</span><span class="p">.</span><span class="n">item</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s1">&#39;price&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)::</span><span class="n">double</span><span class="w"> </span><span class="k">precision</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">END</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="n">to_char</span><span class="p">((</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">CASE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">WHEN</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="s2">&#34;updatedAt&#34;</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="s2">&#34;createdAt&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">ELSE</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="s2">&#34;updatedAt&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">END</span><span class="w"> </span><span class="k">AT</span><span class="w"> </span><span class="n">TIME</span><span class="w"> </span><span class="k">ZONE</span><span class="w"> </span><span class="s1">&#39;ASIA/JAKARTA&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)::</span><span class="nb">date</span><span class="p">::</span><span class="k">timestamp</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="k">zone</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;yyyy-MM-dd&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)),</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="s2">&#34;createdAt&#34;</span><span class="p">,</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">id</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">UNION</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">r</span><span class="p">.</span><span class="s2">&#34;isDeleted&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;salesId&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;salesName&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">division</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;salesDivision&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="s2">&#34;clusterId&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">c</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;clusterName&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">o</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;outletId&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">o</span><span class="p">.</span><span class="s2">&#34;digiposId&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">o</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;outletName&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">o</span><span class="p">.</span><span class="s2">&#34;noChip&#34;</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;outletNoChip&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="s1">&#39;LA&#39;</span><span class="p">::</span><span class="nb">text</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;itemOrProgramId&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="s1">&#39;LA&#39;</span><span class="p">::</span><span class="nb">text</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;typeItem&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="s1">&#39;LA&#39;</span><span class="p">::</span><span class="nb">text</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;itemName&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="mi">0</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;countItem&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="mi">0</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;priceBase&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="mi">0</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;priceSell&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="mi">0</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;priceBaseTotal&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">r</span><span class="p">.</span><span class="n">cash</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">bni</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">bri</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">bca</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">mandiri</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;priceSellTotal&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="mi">0</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">laba</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">to_char</span><span class="p">((</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">CASE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">WHEN</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="s2">&#34;updatedAt&#34;</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="s2">&#34;createdAt&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">ELSE</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="s2">&#34;updatedAt&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">END</span><span class="w"> </span><span class="k">AT</span><span class="w"> </span><span class="n">TIME</span><span class="w"> </span><span class="k">ZONE</span><span class="w"> </span><span class="s1">&#39;ASIA/JAKARTA&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)::</span><span class="nb">date</span><span class="p">::</span><span class="k">timestamp</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="k">zone</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;yyyyMMdd&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)::</span><span class="nb">integer</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;dateInt&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">to_char</span><span class="p">((</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">CASE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">WHEN</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="s2">&#34;updatedAt&#34;</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="s2">&#34;createdAt&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">ELSE</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="s2">&#34;updatedAt&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">END</span><span class="w"> </span><span class="k">AT</span><span class="w"> </span><span class="n">TIME</span><span class="w"> </span><span class="k">ZONE</span><span class="w"> </span><span class="s1">&#39;ASIA/JAKARTA&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)::</span><span class="nb">date</span><span class="p">::</span><span class="k">timestamp</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="k">zone</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;yyyy-MM-dd&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">date</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="s2">&#34;createdAt&#34;</span><span class="w"> </span><span class="k">AT</span><span class="w"> </span><span class="n">TIME</span><span class="w"> </span><span class="k">ZONE</span><span class="w"> </span><span class="s1">&#39;ASIA/JAKARTA&#39;</span><span class="p">::</span><span class="nb">text</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;createdAt&#34;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="s1">&#39;&#39;</span><span class="p">::</span><span class="nb">text</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s2">&#34;uniqueId&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="k">FROM</span><span class="w"> </span><span class="n">receipts</span><span class="w"> </span><span class="n">r</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="k">JOIN</span><span class="w"> </span><span class="s2">&#34;masterSales&#34;</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="s2">&#34;salesId&#34;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="s2">&#34;isDeleted&#34;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="k">JOIN</span><span class="w"> </span><span class="s2">&#34;masterClusters&#34;</span><span class="w"> </span><span class="k">c</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="s2">&#34;clusterId&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="k">JOIN</span><span class="w"> </span><span class="s2">&#34;masterOutlets&#34;</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="s2">&#34;outletId&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">WHERE</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="k">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Top Up&#39;</span><span class="p">::</span><span class="nb">text</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">id</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="mi">21</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><p>It was a tangled web of complexity, a union of two queries, adorned with branching conditions, spanning across five tables with thousands upon thousands of records. Good grief! Where on earth does one even begin to untangle this intricate mess?</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img class="my-0 rounded-md" loading="lazy" alt="Towa Stressed" src="/posts/the-quest-to-export-report-detail-with-range/towa_stressed.png">
+
+  
+</figure>
+</p>
+<p>You see, the App relies on Supabase as its trusty database provider, with PostgreSQL doing all the heavy lifting behind the scenes. Now, I must confess that while I know a thing or two in NoSQL databases like Firebase, I lack the hours to tackle the world of SQL databases, especially on this scale.</p>
+<p>Realizing my lack of understanding in PostgreSQL and feeling completely lost, I knew I had to get up to speed quickly. So, for the next two nights, I dived into the PostgreSQL documentation headfirst. Although I didn&rsquo;t read every single page, I made sure to grasp the most important concepts and get a good grasp of where to begin.</p>
+<p>With each section I read, PostgreSQL started to make more sense. I learned about indexing strategies, vacuuming, and the basics of query optimization. It was like finding puzzle pieces that helped me see the bigger picture.</p>
+<p>After my intensive (not really) reading session, I felt more confident. While there was still much to learn, I now had a solid starting point. I was ready to take on the challenge armed with my newfound PostgreSQL knowledge.</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img class="my-0 rounded-md" loading="lazy" alt="gato vs postgre" src="/posts/the-quest-to-export-report-detail-with-range/gato_vs_postgre.png">
+
+  
+</figure>
+</p>
+
+<h2 class="relative group">Finding half of the solution: Index 
+    <div id="finding-half-of-the-solution-index" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#finding-half-of-the-solution-index" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Alright, it&rsquo;s time to face the cold, hard truth. Brace yourselves, SQL experts, because here comes the confession: we weren&rsquo;t using indexes. I can almost hear the collective gasps and facepalms echoing in the distance. In my blissful ignorance, I thought everything was hunky-dory.</p>
+<p>But let&rsquo;s take a moment to understand the significance of indexes. They play a crucial role in optimizing queries. The table is a book without an index you flip through the entire book to find what you&rsquo;re looking for with an index it looks like this:</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img class="my-0 rounded-md" loading="lazy" alt="index" src="/posts/the-quest-to-export-report-detail-with-range/index.jpg">
+
+  
+</figure>
+</p>
+<p>To illustrate the importance of indexes, let&rsquo;s dive into some charts. These charts depict the speed gains achieved after implementing indexes. Prepare to be amazed!</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img class="my-0 rounded-md" loading="lazy" alt="chart" src="/posts/the-quest-to-export-report-detail-with-range/chart_2.png">
+
+  
+</figure>
+</p>
+<p>Smaller is better</p>
+<p>Voila! With the power of indexes, we managed to save a whopping 4 seconds! Now, I know it may not sound like much in the grand scheme of things, but in the world of database queries, that&rsquo;s a significant improvement.</p>
+<p>When we used the magical explain analyze command on our query, we witnessed a remarkable transformation. Gone were the days of the dreaded sequential scan where PostgreSQL painstakingly sifted through every page of the book. Instead, we now basked in the glory of the index scan on xx a sight that filled our hearts with joy. It was a clear indication that our indexes were being put to good use.</p>
+<p>However, despite our valiant efforts and the progress we had made, we were not out of the woods just yet. As we prepared to run our export feature, a dark cloud of dread loomed overhead. The haunting specter of the &ldquo;Cancelling statement due to statement timeout&rdquo; still haunted us like a persistent ghost. It seemed like our 4-second victory was simply not enough to banish this relentless foe.</p>
+
+<h2 class="relative group">Finding impostor among us 
+    <div id="finding-impostor-among-us" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#finding-impostor-among-us" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>With no other options left, I had to roll up my sleeves and get my hands dirty with the query itself. It was time to play detective and identify the culprit responsible for the sluggish execution time. Was it the sneaky union causing trouble? Or maybe the complex branching logic? Perhaps the seemingly innocent aggregate function had a hidden agenda?</p>
+<p>In my pursuit of answers, I embarked on a process of elimination. Similar to a game of deduction, I had to eliminate suspects one by one until I found the true culprit. Unlike in &ldquo;Among Us,&rdquo; where ejecting the wrong crewmate results in failure, here it was a matter of narrowing down the possibilities and uncovering the source of our woes.</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img class="my-0 rounded-md" loading="lazy" alt="impostor" src="/posts/the-quest-to-export-report-detail-with-range/among_us.png">
+
+  
+</figure>
+</p>
+<p>After conducting intense investigations and pouring over the data, the results were finally in. Behold, the revealing chart that held the key to our query performance:</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img class="my-0 rounded-md" loading="lazy" alt="chart" src="/posts/the-quest-to-export-report-detail-with-range/chart_3.png">
+
+  
+</figure>
+</p>
+<p>It became glaringly obvious that the culprit behind the sluggish execution was the branching logic. However, something still felt fishy. It struck me that when I removed the branch, I also eliminated access to certain columns, particularly those with the jsonb data type. This discovery prompted a daring experiment: what if we completely removed the jsonb data?</p>
+<p>I executed the altered query and watched as the seconds ticked away. And then, the query time plummeted from 33 seconds to a mere 12 seconds. A massive improvement, indeed! It seemed like the solution was within reach, just remove the jsonb and call it a day. But alas, life is never that simple.</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img class="my-0 rounded-md" loading="lazy" alt="chart" src="/posts/the-quest-to-export-report-detail-with-range/chart_4.png">
+
+  
+</figure>
+</p>
+<p>Here&rsquo;s where the dilemma set in. The jsonb data was crucial to our operations. It allowed us to store item data at the time of the transaction, ensuring that any future changes to the item&rsquo;s price wouldn&rsquo;t affect the report. Removing it entirely was not an option. So, what were we to do now? Despite our deliberate efforts, we seemed trapped in a conundrum with no apparent way out.</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img class="my-0 rounded-md" loading="lazy" alt="cat sad" src="/posts/the-quest-to-export-report-detail-with-range/cat_sad.png">
+
+  
+</figure>
+</p>
+<p>But let&rsquo;s not lose hope just yet. It&rsquo;s said that in the face of adversity, innovation thrives. Perhaps, just perhaps, a glimmer of a solution awaited us, ready to be discovered and embraced.</p>
+
+<h2 class="relative group">A glimmer of hope 
+    <div id="a-glimmer-of-hope" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#a-glimmer-of-hope" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Confronted with the harsh reality that improving the existing query was a near-impossible task, I shifted my focus towards finding a way to work around this limitation. A potential solution emerged in my mind: why not offload the export generation to an asynchronous service running on a separate server? By doing so, even if the process took longer, users could simply check back later and continue using the app without waiting for the export to finish.</p>
+<p>For the backend server, I opted to use Rust.</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img class="my-0 rounded-md" loading="lazy" alt="crab with knife" src="/posts/the-quest-to-export-report-detail-with-range/ferris.png">
+
+  
+</figure>
+</p>
+<p>Not because I wanted to evangelize or squeeze every ounce of performance, but rather because I knew that Rust&rsquo;s async runtime, Tokioooooo, offered a hassle-free way to create and spawn asynchronous processes. It seemed like a fitting choice for the task at hand.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="n">actix_web</span>::<span class="n">rt</span>::<span class="n">spawn</span><span class="p">(</span><span class="k">async</span><span class="w"> </span><span class="k">move</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// async process here
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">})</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// it&#39;s literally that simple
+</span></span></span></code></pre></div><p>I started building the API service in Rust, praying that this approach would finally prove successful. Before long, I completed the first iteration of the service and put it to the test. Miraculously, it worked!</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img class="my-0 rounded-md" loading="lazy" alt="cat nani" src="/posts/the-quest-to-export-report-detail-with-range/cat_nani.png">
+
+  
+</figure>
+</p>
+<p>I could now export more than a single month&rsquo;s worth of data. I pushed the boundaries and tested it with five months&rsquo; worth of data, and it performed admirably. There was no reason to believe that I couldn&rsquo;t scale it further.</p>
+<p>However, as is often the case in our journey, my elation was short-lived. I soon discovered that the chance of timeouts and failures still loomed over the process, occurring more often than I had hoped. The initial victory was dampened by this realization, leaving me once again in search of a solution to this persistent challenge&hellip;</p>
+
+<h2 class="relative group">Work around that took out production 
+    <div id="work-around-that-took-out-production" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#work-around-that-took-out-production" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>In my quest to overcome the timeouts and failures, I devised a workaround. First, I resorted to an extreme measure by increasing the timeout to a whopping 5000 seconds!!!</p>
+<p>As for the Rust implementation, I set it up to retry the request if no response was received within 4 minutes.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">while</span><span class="w"> </span><span class="n">is_success</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#34;URL&#34;</span><span class="p">).</span><span class="n">timeout</span><span class="p">(</span><span class="n">std</span>::<span class="n">time</span>::<span class="n">Duration</span>::<span class="n">new</span><span class="p">(</span><span class="mi">240</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)).</span><span class="n">send</span><span class="p">().</span><span class="k">await</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nb">Ok</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">is_success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nb">Err</span><span class="p">(</span><span class="n">_</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;timed out, retrying&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">continue</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>Little did I know that this plan would lead to catastrophic consequences and bring production to a screeching halt.</p>
+<p>After implementing the changes, I ran the system and decided to take a well-deserved lunch break. Upon returning, I anxiously checked the logs, only to discover that the retries were indeed happening. Progress, albeit slow, was being made. However, my relief was short-lived. Half an hour later, an alarming message arrived, notifying me that production was unresponsive.</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img class="my-0 rounded-md" loading="lazy" alt="Towa Stressed" src="/posts/the-quest-to-export-report-detail-with-range/towa_stressed.png">
+
+  
+</figure>
+</p>
+<p>To my horror, I found the database in an unresponsive state. CPU usage and disk I/O bandwidth were pushed to their limits. It became apparent that the sheer size of our query required PostgreSQL to temporarily store data on the disk and read it back later. With my incessant retries, without cancelling prior requests, the database was bombarded with an astronomical number of reads and writes, leading to its downfall.</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img class="my-0 rounded-md" loading="lazy" alt="Whoa" src="/posts/the-quest-to-export-report-detail-with-range/menace_to_society.png">
+
+  
+</figure>
+</p>
+<p>Swiftly, I terminated all connections to the database, restoring order and stability. However, the bandwidth for that day was a casualty of the chaos. Frustration bubbled within me, yet I was determined to return to the drawing board once more.</p>
+
+<h2 class="relative group">Discovering Success: The Silver Lining 
+    <div id="discovering-success-the-silver-lining" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#discovering-success-the-silver-lining" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>After enduring a grueling amount of trial and error, I finally devised a new plan to tackle the persistent timeout issue. The key was to segment the request into a maximum of one month per request. For example, if a user requested a five-month-long report, I would split it into five separate one-month requests and send them to the database.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">split_date_range</span><span class="p">(</span><span class="n">start_date</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">,</span><span class="w"> </span><span class="n">end_date</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Vec</span><span class="o">&lt;</span><span class="n">DateRange</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">start_date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaiveDate</span>::<span class="n">parse_from_str</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;%Y-%m-%d&#34;</span><span class="p">).</span><span class="n">unwrap</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">end_date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NaiveDate</span>::<span class="n">parse_from_str</span><span class="p">(</span><span class="n">end_date</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;%Y-%m-%d&#34;</span><span class="p">).</span><span class="n">unwrap</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">split_dates</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Vec</span>::<span class="n">new</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">current_date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">start_date</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="n">current_date</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">end_date</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">next_month_start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">current_date</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">.</span><span class="n">with_day</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">.</span><span class="n">unwrap</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">.</span><span class="n">with_month</span><span class="p">(</span><span class="n">current_date</span><span class="p">.</span><span class="n">month</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">.</span><span class="n">unwrap</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">split_end_date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">next_month_start</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">end_date</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">next_month_start</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">chrono</span>::<span class="n">Duration</span>::<span class="n">days</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">end_date</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">date_range</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DateRange</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">start_date</span>: <span class="nc">current_date</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">end_date</span>: <span class="nc">split_end_date</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">split_dates</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">date_range</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">current_date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">next_month_start</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">split_dates</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>But why this segmentation, you may wonder?</p>
+<p>Well, the root cause of the timeouts lay in my initial approach of requesting the exact count of rows for each individual request. This proved to be a costly operation in PostgreSQL, taking longer than fetching the actual data itself. To make matters worse, I was repeatedly requesting the count, multiplying the impact. It dawned on me that by reducing the amount of data requested, the count operation would be significantly faster. It was a hypothesis worth testing.</p>
+<p>With cautious optimism, I implemented the segmentation approach, and lo and behold, it worked! Even when requesting data from the very beginning of the app until the current date, the system performed admirably. Granted, it may still be considered slow, but compared to the previous state of perpetual timeouts, delivering five months&rsquo; worth of data in just two minutes was a considerable improvement. From infinity to two minutes, I&rsquo;d say that&rsquo;s more than decent progress.</p>
+<p>With my newfound solution in hand, I confidently deployed and tested it in the production environment. And you know what? It worked flawlessly. After an arduous journey filled with countless setbacks, I had finally found the light at the end of the tunnel.</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img class="my-0 rounded-md" loading="lazy" alt="ina pien" src="/posts/the-quest-to-export-report-detail-with-range/ina_pien.png">
+
+  
+</figure>
+</p>
+
+<h2 class="relative group">Conclusion 
+    <div id="conclusion" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#conclusion" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>It has been a puzzling battle, but one that was fought valiantly, if I may say so myself. This blog post only scratches the surface of what I learned throughout this feature request journey. In reality, the lessons were far more extensive and intricate. However, fear not, for I plan to delve into those details in a separate post, providing a deeper exploration of the knowledge gained. For now, let this post serve as an amusing tale of taming the elephant.</p>
+<p>In hindsight, it&rsquo;s clear that better table design could have avoided many of the challenges we faced. But compromises are often inevitable, and requirements tend to change. If only we had known the precise report style from the very beginning, we could have designed more performant tables. Alas, what&rsquo;s done is done, and a total rewrite is rarely the optimal solution. Sometimes, we must repair a flat tire on a moving car, a difficult task indeed. Yet, with determination and effort, we can overcome the hurdles and find a way forward.</p>
+<p>In the end, this experience has been a valuable lesson in problem-solving and resilience. It reminded me that even in the face of seemingly insurmountable obstacles, there is always a path to a solution. It may require creativity, perseverance, and a healthy dose of humor, but with these tools in hand, we can triumph over the most formidable challenges. So, onward we go, armed with newfound knowledge and a spirit ready to conquer whatever the future may bring.</p>
+
+          
+          
+          
+        </div>
+        
+        
+
+        
+  
+  <section class="flex flex-row flex-wrap justify-center pt-4 text-xl">
+    
+      
+        <a
+          target="_blank"
+          class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+          href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://localhost:1313/posts/the-quest-to-export-report-detail-with-range/&amp;title=The%20quest%20to%20export%20report%20detail%20with%20range"
+          title="Share on LinkedIn"
+          aria-label="Share on LinkedIn">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+</span>
+        </a>
+      
+    
+      
+        <a
+          target="_blank"
+          class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+          href="https://twitter.com/intent/tweet/?url=http://localhost:1313/posts/the-quest-to-export-report-detail-with-range/&amp;text=The%20quest%20to%20export%20report%20detail%20with%20range"
+          title="Tweet on Twitter"
+          aria-label="Tweet on Twitter">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg></span>
+        </a>
+      
+    
+      
+        <a
+          target="_blank"
+          class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+          href="https://api.whatsapp.com/send?text=http://localhost:1313/posts/the-quest-to-export-report-detail-with-range/&amp;resubmit=true&amp;title=The%20quest%20to%20export%20report%20detail%20with%20range"
+          title="Share via WhatsApp"
+          aria-label="Share via WhatsApp">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+</span>
+        </a>
+      
+    
+      
+        <a
+          target="_blank"
+          class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+          href="https://pinterest.com/pin/create/bookmarklet/?url=http://localhost:1313/posts/the-quest-to-export-report-detail-with-range/&amp;description=The%20quest%20to%20export%20report%20detail%20with%20range"
+          title="Pin on Pinterest"
+          aria-label="Pin on Pinterest">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3.8-3.4 5-20.3 6.9-28.1.6-2.5.3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 51.6-.9 71.2C65.4 450.9 0 361.1 0 256 0 119 111 8 248 8s248 111 248 248z"/></svg>
+</span>
+        </a>
+      
+    
+      
+        <a
+          target="_blank"
+          class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+          href="https://reddit.com/submit/?url=http://localhost:1313/posts/the-quest-to-export-report-detail-with-range/&amp;resubmit=true&amp;title=The%20quest%20to%20export%20report%20detail%20with%20range"
+          title="Submit to Reddit"
+          aria-label="Submit to Reddit">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M201.5 305.5c-13.8 0-24.9-11.1-24.9-24.6 0-13.8 11.1-24.9 24.9-24.9 13.6 0 24.6 11.1 24.6 24.9 0 13.6-11.1 24.6-24.6 24.6zM504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-132.3-41.2c-9.4 0-17.7 3.9-23.8 10-22.4-15.5-52.6-25.5-86.1-26.6l17.4-78.3 55.4 12.5c0 13.6 11.1 24.6 24.6 24.6 13.8 0 24.9-11.3 24.9-24.9s-11.1-24.9-24.9-24.9c-9.7 0-18 5.8-22.1 13.8l-61.2-13.6c-3-.8-6.1 1.4-6.9 4.4l-19.1 86.4c-33.2 1.4-63.1 11.3-85.5 26.8-6.1-6.4-14.7-10.2-24.1-10.2-34.9 0-46.3 46.9-14.4 62.8-1.1 5-1.7 10.2-1.7 15.5 0 52.6 59.2 95.2 132 95.2 73.1 0 132.3-42.6 132.3-95.2 0-5.3-.6-10.8-1.9-15.8 31.3-16 19.8-62.5-14.9-62.5zM302.8 331c-18.2 18.2-76.1 17.9-93.6 0-2.2-2.2-6.1-2.2-8.3 0-2.5 2.5-2.5 6.4 0 8.6 22.8 22.8 87.3 22.8 110.2 0 2.5-2.2 2.5-6.1 0-8.6-2.2-2.2-6.1-2.2-8.3 0zm7.7-75c-13.6 0-24.6 11.1-24.6 24.9 0 13.6 11.1 24.6 24.6 24.6 13.8 0 24.9-11.1 24.9-24.6 0-13.8-11-24.9-24.9-24.9z"/></svg>
+</span>
+        </a>
+      
+    
+      
+        <a
+          target="_blank"
+          class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+          href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:1313/posts/the-quest-to-export-report-detail-with-range/&amp;quote=The%20quest%20to%20export%20report%20detail%20with%20range"
+          title="Share on Facebook"
+          aria-label="Share on Facebook">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+</span>
+        </a>
+      
+    
+      
+        <a
+          target="_blank"
+          class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+          href="mailto:?body=http://localhost:1313/posts/the-quest-to-export-report-detail-with-range/&amp;subject=The%20quest%20to%20export%20report%20detail%20with%20range"
+          title="Send via email"
+          aria-label="Send via email">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"/></svg>
+</span>
+        </a>
+      
+    
+  </section>
+
+
+        
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
+          integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
+          data-oid="views_posts/the-quest-to-export-report-detail-with-range/index.md"
+          data-oid-likes="likes_posts/the-quest-to-export-report-detail-with-range/index.md"></script>
+      
+    </section>
+
+    
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+      <div class="flex justify-between pt-3">
+        <span>
+          
+        </span>
+        <span>
+          
+            <a class="flex text-right group ml-3" href="/posts/to-watch-the-arima-kinen/">
+              <span class="flex flex-col">
+                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >to watch the arima kinen</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-08-07T00:00:00&#43;00:00">7 August 2025</time>
+                  
+                </span>
+              </span>
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+            </a>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+    </footer>
+  </article>
+
+        <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0 z-10">
+  <a
+    href="#the-top"
+    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+      
+      
+        
+          
+          
+      
+      
+      
+      <nav class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400 ">
+        <ul class="flex list-none flex-col sm:flex-row">
+          
+            <li class=" flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0 ">
+              <a
+                class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
+                href="/tags/"
+                title="Tags">
+                
+                Tags
+              </a>
+            </li>
+          
+            <li class=" flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0 ">
+              <a
+                class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
+                href="/categories/"
+                title="Categories">
+                
+                Categories
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2025
+          Posei
+      </p>
+    
+
+    
+    
+      <p class="text-xs text-neutral-500 dark:text-neutral-400">
+        
+        
+        Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
+      </p>
+    
+  </div>
+  
+    <script>
+      mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+        margin: 24,
+        background: "rgba(0,0,0,0.5)",
+        scrollOffset: 0,
+      });
+    </script>
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="http://localhost:1313/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>
