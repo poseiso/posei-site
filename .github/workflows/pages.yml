@@ -55,7 +55,7 @@ jobs:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
-          hugo --minify -d ./public --baseURL https://nunocoracao.github.io/blowfish_lite/
+          hugo --minify -d ./public --baseURL https://posei.me/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -66,7 +66,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: https://nunocoracao.github.io/blowfish_lite/
+      url:  https://posei.me/
     runs-on: ubuntu-latest
     needs: build
     steps:
