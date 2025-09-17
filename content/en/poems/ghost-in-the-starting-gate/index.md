@@ -3,7 +3,7 @@ title: "To the Ghost in the Starting Gate"
 summary: "-"
 categories: ["Poems"]
 tags: [""]
-date: 2025-08-07
+date: 2025-09-17
 draft: false
 ---
 
