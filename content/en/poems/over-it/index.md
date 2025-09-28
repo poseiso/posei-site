@@ -42,12 +42,12 @@ I will thank that past self
 for showing me the peak of our possibility,  
 when nothing else mattered.  
 
-But even having said all this…  
+But even having said all this...
 if I am forced to look back,  
 it still stings.  
 
 Perhaps I will never truly be over it.  
-Or perhaps…  
+Or perhaps...
 this sting is not a wound,  
 but my very soul refusing to let go  
 of a fire that once defined it.  
