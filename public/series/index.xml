@@ -4,10 +4,8 @@
     <title>Series on Posei Site</title>
     <link>http://localhost:1313/series/</link>
     <description>Recent content in Series on Posei Site</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <copyright>© 2025 Posei</copyright>
     <atom:link href="http://localhost:1313/series/index.xml" rel="self" type="application/rss+xml" />
-    
   </channel>
 </rss>
