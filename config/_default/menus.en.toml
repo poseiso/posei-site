@@ -14,6 +14,11 @@ name = "About"
 pageRef = "about"
 weight = 20
 
+[[main]]
+name = "Links"
+pageRef = "links"
+weight = 25
+
 [[footer]]
 name = "Tags"
 pageRef = "tags"
