@@ -18,4 +18,5 @@ showTableOfContents: false
 
 - [Ramenaru](https://ramenaru.me) - The thing.
 - [Osshoi](https://osshoi.com) - The creature.
+- [Kitsune](https://www.kitsu.red/) - The **kon**sultant.
 
