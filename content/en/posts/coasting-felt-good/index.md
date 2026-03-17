@@ -11,18 +11,25 @@ Coasting or in simpler words, taking it easy, putting in the minimum effort to g
 
 I too have been a part of it, though it was not a conscious decision. It was more of a natural slide, the kind your body does for you when your mind refuses to admit something broke.  
 
-## The Crash
+## Before
 
-I used to be feisty. Chased goals relentlessly, then chased a big one: I was making a game. An action RPG (uh oh). Probably my second or third game ever. In hindsight, that's a recipe for disaster, but I didn't know better.  
-
-Most people who've tried to make their dream RPG know how emotionally heavy that is in isolation. But this one carried personal weight beyond just the project itself, the kind I want to keep personal. So when it failed, it didn't just fail as a project. It failed as something much closer to the bone.  
-
-Everything went downhill from there. I somewhat recovered, enough to function, enough to ship work, enough to look fine. But somewhere along the way I entered this state of "good enough." Coasting. Both in professional work and personal pursuits.  
-
-The difference is stark. According to my WakaTime, I used to average 8 hours of coding a day with a 15-minute timeout. That's a pretty insane number. And it wasn't just work code, I was picking up weird new projects every other week, catching up with everything, pushing myself into things I didn't already know. I was there when Rust had no Rust Foundation™ and now I hate the entire language </3. Point is, the hours weren't just volume, they were breadth and hunger. 
+According to my WakaTime, I used to average 8 hours of coding a day with a 15-minute timeout. That's a pretty insane number. And it wasn't just work code, I was picking up weird new projects every other week, catching up with everything, pushing myself into things I didn't already know. I was there when Rust had no Rust Foundation™ and now I hate the entire language </3. Point is, the hours weren't just volume, they were breadth and hunger.
 
 And for all the stress, it felt *right*. Not comfortable, not easy, but true like I was actually being myself. I would be dead tired, so much so I'd be a log as soon as I hit the bed but I had the biggest stupid grin on my face. Even when things were going wrong, and I couldn't even get an ounce of sleep, It still felt *right*, despite all that I was still being a proper Posei(if that makes sense).
 
+## The Crash
+
+I used to be feisty. Chased goals relentlessly, then chased a big one: I was making a game. An action RPG (uh oh). Probably my second or third game ever. In hindsight, that's a recipe for disaster, but I didn't know better.
+
+Most people who've tried to make their dream RPG know how emotionally heavy that is in isolation. But this one carried personal weight beyond just the project itself, the kind I want to keep personal. So when it failed, it didn't just fail as a project. It failed as something much closer to the bone.
+
+Everything went downhill from there.
+
+## The Slide
+
+After overcoming the biggest hurdle of the crash, which was just trying to go back to being a functional human being (maybe a story worth its own post) I slipped into coasting naturally. There was no moment where I decided "I'm going to take it easy now." It just happened. The urgency was gone, the fire was gone, and what was left was a quieter version of me that did enough and not much more.
+
+I somewhat recovered, enough to function, enough to ship work, enough to look fine. But somewhere along the way I entered this state of "good enough." Coasting. Both in professional work and personal pursuits.
 
 During my coasting era? 3 hours of actual coding. And here's the thing tho, 3 hours is still above the global average according to WakaTime stats. I was coasting above average. Which I'd argue is even more insane, and not in a flattering way. And I barely touched anything new after that.  
 
