@@ -12,10 +12,10 @@ showWordCount: false
 showZenMode: false
 ---
 
-SWE, heavy on mobile dev, so-so in the other 'regular' dev.  
-Most of my work still leans toward mobile, but these days I wear more hats.  
+I'm more creatively inclined than anything, but I somehow perform better on the engineering side.
+SWE by trade, heavy on mobile, so-so in the other 'regular' dev. These days I wear more hats.
 
-I pursue graphics programming in my own time, not just a passing interest, but a path I actively invest in.
+I write and pursue graphics programming, not as side hobbies, but as things I actually care about shaping.
 
 ## What I do
 
@@ -73,12 +73,26 @@ And then there's **Touhou**. I don't fully know why I love it.
 Maybe because it's the first open source game with a million forks, some of which aren't even games anymore.  
 Also: **Akatsuki Records** is my favorite circle.  
 Followed closely by **Tumeneco**.
+I also like FELT but RIP.
+
+
+## What Moves Me
+
+I love seeing something done, or someone doing something, with a level of seriousness that seems excessive and unnecessary to most.
+"It's not that serious." No, it *is* that serious.  
+
+Full commitment to whatever you are. That's the thing.  
+
+## What I Believe and Owe
+
+["My Code"](/poems/my-code/)  
 
 
 ## What This Site Is
 
-This site is a small corner of the internet for the things I build and think about.  
-If you're into custom tooling, low-level graphics, or discussing how the protagonist farmed aura for the 50th time in chapter 50 - we might get along.
+This site is where I put things I think about and things I make.
+Sometimes it's a poem, sometimes it's processing what happened to me and maybe once in a while an actual technical post.
+There's no unifying topic. It's just me.
 
 You can reach me at [GitHub](https://github.com/poseiso) or [contact@posei.me](mailto:contact@posei.me).
 
